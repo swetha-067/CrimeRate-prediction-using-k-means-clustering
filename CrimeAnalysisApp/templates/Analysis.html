@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>Crime Prediction & Analysis</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter Murder value");
+	formObj.t4.focus();
+	return false;
+	}
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter Rape value");
+	formObj.t5.focus();
+	return false;
+	}
+	if(formObj.t6.value.length==0)
+	{
+	alert("Please Enter Theft value");
+	formObj.t6.focus();
+	return false;
+	}
+	if(formObj.t7.value.length==0)
+	{
+	alert("Please Enter Dowry Deaths value");
+	formObj.t7.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<center><font size="4" color="yellow">Crime Rate Prediction & Analysis using K-Means Clustering Algorithm</font></center>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul><center>
+			<li class="first current_page_item"><a href="{% url 'index' %}"><font size="" color="yellow">Home Page</font></a></li>
+			<li class="first current_page_item"><a href="{% url 'Admin' %}"><font size="" color="yellow">Admin Login</font></a></li>
+			<li class="first current_page_item"><a href="{% url 'ClusterPrediction' %}"><font size="" color="yellow">Cluster Prediction</font></a></li>
+			<li class="first current_page_item"><a href="{% url 'FuturePrediction' %}"><font size="" color="yellow">Future Prediction</font></a></li>
+			<li class="first current_page_item"><a href="{% url 'Analysis' %}"><font size="" color="yellow">Analysis</font></a></li>
+			
+		</center></ul>	<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+<form name="f1" method="post" action={% url 'AnalysisAction' %} onsubmit="return validate(this);">
+<br/>{% csrf_token %}<br/>
+   <h5><b>Crime Rate Prediction Screen Using Future Prediction</b></h5>
+   
+   <font size="" color="red"><center>{{ data|safe }}</center></font>
+
+				
+						<table align="center" width="40" >
+				
+			
+			<tr><td><font size="" color="black">Analysis&nbsp;Type</b></td><td><select name="t1">
+			<option value="Theft">Theft</option>
+			<option value="Murder">Murder</option>
+			<option value="Rape">Rape</option>
+			</td></tr>
+				          
+			<tr><td></td><td><input type="submit" value="Submit">
+
+			</td>
+			</tr>
+			</table>
+				</div>	
+					
+				</div>
+				<br/><br/>
+	</body>
+</html>

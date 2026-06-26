@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+*.zip
+*.docx
+*.xlsx
+*.pyc
+Thumbs.db
+Dataset/diabetes_prediction_dataset.csv
+Dataset/icecream.csv
+Dataset/icecream (3).csv
+Dataset/fixed_students_dob_doj (3) (2).csv
+Dataset/fixed_students_dob_doj (3) (3).csv
+Dataset/insurance_data.csv
+Dataset/sem_wise_marks1.xlsx
+Dataset/current_analysis.zip
+Dataset/Crime Rate Prediction & Analysis using K-Means Clustering Algorithm (1).docx
