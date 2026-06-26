@@ -1,0 +1,8 @@
+/admin              /Admin.html              200
+/adminscreen        /AdminScreen.html        200
+/analysis           /Analysis.html           200
+/clusterprediction  /ClusterPrediction.html  200
+/futureprediction   /FuturePrediction.html   200
+/uploaddataset      /UploadDataset.html      200
+/viewdataset        /ViewDataset.html        200
+/viewgraphs         /ViewGraphs.html         200
