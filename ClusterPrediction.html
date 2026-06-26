@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Crime Prediction &amp; Analysis</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<script>
+function validate(formObj) {
+	for (const name of ["t4", "t5", "t6", "t7"]) {
+		if (formObj[name].value.length === 0) {
+			alert("Please enter all crime count values");
+			formObj[name].focus();
+			return false;
+		}
+	}
+	const total = Number(formObj.t4.value) + Number(formObj.t5.value) + Number(formObj.t6.value) + Number(formObj.t7.value);
+	document.getElementById("cluster-result").innerHTML = total >= 500 ? "Predicted as <b>High Crime Rate Area</b>" : "Predicted as <b>Low Crime Rate Area</b>";
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header"><div id="logo"><center><font size="4" color="yellow">Crime Rate Prediction &amp; Analysis using K-Means Clustering Algorithm</font></center></div></div>
+	<div id="menu"><ul><center>
+		<li class="first current_page_item"><a href="index.html"><font color="yellow">Home Page</font></a></li>
+		<li class="first current_page_item"><a href="Admin.html"><font color="yellow">Admin Login</font></a></li>
+		<li class="first current_page_item"><a href="ClusterPrediction.html"><font color="yellow">Cluster Prediction</font></a></li>
+		<li class="first current_page_item"><a href="FuturePrediction.html"><font color="yellow">Future Prediction</font></a></li>
+		<li class="first current_page_item"><a href="Analysis.html"><font color="yellow">Analysis</font></a></li>
+	</center></ul><br class="clearfix" /></div>
+	<div id="splash"><img class="pic" src="assets/images/investor.jpg" width="870" height="230" alt="" /></div>
+	<div class="content"><center>
+	<form name="f1" method="post" action="ClusterPrediction.html" onsubmit="return validate(this);">
+		<br/><h5><b>Crime Rate Prediction Screen Using Clustering</b></h5>
+		<p id="cluster-result" class="message"></p>
+		<table class="form-table">
+			<tr><td><font color="black">States</font></td><td><select name="t1"><option>Andhra Pradesh</option><option>Delhi</option><option>Karnataka</option><option>Maharashtra</option><option>Tamil Nadu</option></select></td></tr>
+			<tr><td><font color="black">District</font></td><td><select name="t2"><option>Anantapur</option><option>Chittoor</option><option>Delhi City</option><option>Bengaluru</option><option>Mumbai</option></select></td></tr>
+			<tr><td><font color="black">Year</font></td><td><select name="t3"><option>2026</option><option>2027</option><option>2028</option></select></td></tr>
+			<tr><td><font color="black">Murder</font></td><td><input type="text" name="t4" size="20" /></td></tr>
+			<tr><td><font color="black">Rape</font></td><td><input type="text" name="t5" size="20" /></td></tr>
+			<tr><td><font color="black">Theft</font></td><td><input type="text" name="t6" size="20" /></td></tr>
+			<tr><td><font color="black">Dowry&nbsp;Deaths</font></td><td><input type="text" name="t7" size="20" /></td></tr>
+			<tr><td></td><td><input type="submit" value="Submit" /></td></tr>
+		</table>
+	</form>
+	</center></div>
+</div>
+</body>
+</html>

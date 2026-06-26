@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Crime Prediction &amp; Analysis</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<script>
+function openGraphs(formObj) {
+	window.location.href = "ViewGraphs.html?type=" + encodeURIComponent(formObj.t1.value);
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header"><div id="logo"><center><font size="4" color="yellow">Crime Rate Prediction &amp; Analysis using K-Means Clustering Algorithm</font></center></div></div>
+	<div id="menu"><ul><center>
+		<li class="first current_page_item"><a href="index.html"><font color="yellow">Home Page</font></a></li>
+		<li class="first current_page_item"><a href="Admin.html"><font color="yellow">Admin Login</font></a></li>
+		<li class="first current_page_item"><a href="ClusterPrediction.html"><font color="yellow">Cluster Prediction</font></a></li>
+		<li class="first current_page_item"><a href="FuturePrediction.html"><font color="yellow">Future Prediction</font></a></li>
+		<li class="first current_page_item"><a href="Analysis.html"><font color="yellow">Analysis</font></a></li>
+	</center></ul><br class="clearfix" /></div>
+	<div id="splash"><img class="pic" src="assets/images/investor.jpg" width="870" height="230" alt="" /></div>
+	<div class="content"><center>
+	<form name="f1" method="post" action="ViewGraphs.html" onsubmit="return openGraphs(this);">
+		<br/><h5><b>Crime Rate Prediction Screen Using Future Prediction</b></h5>
+		<table class="form-table">
+			<tr><td><font color="black">Analysis&nbsp;Type</font></td><td><select name="t1"><option value="Theft">Theft</option><option value="Murder">Murder</option><option value="Rape">Rape</option></select></td></tr>
+			<tr><td></td><td><input type="submit" value="Submit" /></td></tr>
+		</table>
+	</form>
+	</center></div>
+</div>
+</body>
+</html>

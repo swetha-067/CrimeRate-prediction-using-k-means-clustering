@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Crime Prediction &amp; Analysis</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="assets/style.css" />
+<script>
+function validate(formObj) {
+	if (formObj.t1.value.length === 0) {
+		alert("Please upload dataset");
+		formObj.t1.focus();
+		return false;
+	}
+	window.location.href = "ViewDataset.html";
+	return false;
+}
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header"><div id="logo"><center><font size="4" color="yellow">Crime Rate Prediction &amp; Analysis using K-Means Clustering Algorithm</font></center></div></div>
+	<div id="menu"><ul><center>
+		<li class="first current_page_item"><a href="UploadDataset.html"><font color="yellow">Upload Dataset</font></a></li>
+		<li class="first current_page_item"><a href="index.html"><font color="yellow">Logout</font></a></li>
+	</center></ul><br class="clearfix" /></div>
+	<div id="splash"><img class="pic" src="assets/images/investor.jpg" width="870" height="230" alt="" /></div>
+	<div class="content"><center>
+	<form name="f1" method="post" action="ViewDataset.html" enctype="multipart/form-data" onsubmit="return validate(this);">
+		<br/><h5><b>Dataset Upload Screen</b></h5>
+		<table class="form-table">
+			<tr><td><font color="black">Browse&nbsp;Dataset</font></td><td><input type="file" name="t1" size="30" /></td></tr>
+			<tr><td></td><td><input type="submit" value="Upload Dataset" /></td></tr>
+		</table>
+	</form>
+	</center></div>
+</div>
+</body>
+</html>
